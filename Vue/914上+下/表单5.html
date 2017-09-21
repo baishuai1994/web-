@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<!-- 起步 ：创建一个声明式渲染 -->
+<div id="app">
+  <!-- 注意：问题出现在它的value,如果没有value,他们两个被绑定在了同一个picked上，是实现联动的 -->
+ <!--   <input type="radio" id="one" value="One" v-model="picked">
+   <label for="one">One</label>
+   <br>
+   <input type="radio" id="two" value="Two" v-model="picked">
+   <label for="two">Two</label>
+   <br>
+   <span>Picked: {{ picked }}</span> -->
+   <input type="radio" id="one" value="One" v-model="picked">
+   <label for="one">one</label>
+   <input type="radio">
+   <input type="radio" id="two" value="One1" v-model="picked">
+   <label for="two">two</label>
+   <input type="radio">
+    <span>Picked: {{ picked }}</span>
+</div>
+    </div>
+    <script>
+      var app=new Vue({
+      	el:'#app',//element元素
+      	data:{
+          picked:'One'  
+      	}
+      })
+    //看起来，这像是一个简单的字符串模板渲染
+    //但是，在vue背后，做了很多工作，背后的Dom与数据已经发生了绑定，所有的元素都已为响应式。
+
+    </script> 
+</body>
+</html>

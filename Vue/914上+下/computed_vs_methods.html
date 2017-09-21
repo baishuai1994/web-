@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./vue.js"></script>
+</head>
+<body>
+	<!-- 起步 ：创建一个声明式渲染 -->
+    <div id="app">
+    	<p>{{message}}</p>
+    	<!-- computed属性方法 -->
+      <p>{{now}}</p>
+    	<p>{{now}}</p>
+    	<p>{{now}}</p>
+    	<!-- methods属性方法 -->
+      <p>{{now1()}}</p>
+    	<p>{{now1()}}</p>
+    	<p>{{now1()}}</p>
+    </div>
+    <script>
+      var app=new Vue({
+      	el:'#app',//element元素
+      	data:{
+      		message:'Hello,Vue.js',
+      		msg:'上面是computed,下面是methods'
+      	},
+      	methods:{
+      	  now1:function(){
+      	  	console.log('我是methods属性方法')
+      	  	console.log(Date.now())
+      	  }	
+      	},
+      	computed: {
+          now: function () {
+          	 console.log('我是computed属性方法')
+             console.log(Date.now())
+          }
+        }
+      })
+
+    </script> 
+</body>
+</html>

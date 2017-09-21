@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./vue.js"></script>
+</head>
+<body>
+   <div id="app">
+		<table>
+		    <tr is="my-row"></tr>
+		</table>
+   </div>
+<script>
+   // 案例二，使用Javascript模板字符串，模板解析渲染出错
+    Vue.component('myRow', {
+        template:'<tr>行元素</tr>'
+    });
+    new Vue({
+        el: '#app'
+    });
+</script>
+    </script> 
+</body>
+</html>

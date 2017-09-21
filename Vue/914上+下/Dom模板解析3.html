@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./vue.js"></script>
+</head>
+<body>
+  <div id="app">
+    <select>
+       <option is="my-row"></option>
+    </select>
+</div>
+
+<script type="text/x-template" id="tr">
+    <option>行元素</option>
+</script>
+
+<script>
+//案例三，使用<script type="text/x-template">，模板解析渲染出错
+    Vue.component('myRow', {
+        template: '#tr'
+    });
+    new Vue({
+        el: '#app'
+    });
+</script>
+</script>
+    </script> 
+</body>
+</html>

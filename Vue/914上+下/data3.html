@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./vue.js"></script>
+</head>
+<body>
+	<!-- 起步 ：创建一个声明式渲染 -->
+    <div id="app">
+    	<my-component></my-component> 
+      <my-component></my-component> 
+      <my-component></my-component> 
+    </div>
+    <script>
+    // data在Component里必须是一个函数，是其他的对象之类的就会报错
+      Vue.component('my-component', {
+        template: '<input type="button" v-on:click="counter += 1" v-bind:value="counter">',
+        data: function(){
+          return {counter:0}
+        }
+      })
+
+      var app=new Vue({
+      	el:'#app',//element元素
+      	
+      })
+    </script> 
+</body>
+</html>

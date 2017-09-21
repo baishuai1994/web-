@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <script type="text/javascript" src="./vue.js"></script>
+</head>
+<body>
+
+<div id="app">
+     <p>{{ message }}</p>
+     <input type="text" v-model='message'>
+</div>
+<script type="text/javascript">
+    
+  var app = new Vue({
+      el: '#app',
+      data: {
+          message : "Teacher Ji is a gentleman." 
+      },
+    //  1. new Vue() 创建vue实例
+    //  2. Init Events & Lifecycle 初始化 我们的事件 和 生命周期
+    // Lifecycle Hocks 1: beforeCreate  创建前的状态  
+    //  3.Init (初始化) injections (依赖注入) & reactivity (开始响应)
+    // Lifecycle Hocks 2：created 创建完毕状态
+    //  4. 'el','template', 'render function' or 'as template' 是否有元素el，是否有模板，是否渲染到了函数内，是否作为模板进行了outerHTML渲染到了页面
+    //  Lifecycle Hocks 3：beforeMount 挂载前状态
+    //  5. Create app.$el and replace 'el' with it 挂载我们的"#app" 并且还是把我们的‘#app’生成虚拟DOM，生成完毕后并渲染到view层。
+    //  Lifecycle Hocks 4：mounted 挂载结束状态
+    //  6. when data changes 当我们的数据发生了改变 
+    //  Lifecycle Hocks 5：beforeUpdate beforeUpdate 更新前状态
+    //  7.Virtual DOM re-render and patch  虚拟Dom重渲染 并且有需要的打补丁
+    //  Lifecycle Hocks 6：updated 更新完成状态
+
+
+
+       // beforecreated：el 和 data 并未初始化 
+       // created:完成了 data 数据的初始化，el没有
+       // beforeMount：完成了 el 和 data 初始化 
+       // mounted ：完成挂载
+  
+
+       // 在标红处，我们能发现el还是 {{message}}，这里就是应用的 Virtual DOM（虚拟Dom）技术，先把坑占住了。到后面mounted挂载的时候再把值渲染进去。
+       // %c是针对字符  %s是针对字符串
+       beforeCreate: function () {
+               console.group('beforeCreate 创建前状态===============》');
+               console.log("%c%s", "color:red" , "el     : " + this.$el); //undefined
+               console.log("%c%s", "color:red","data   : " + this.$data); //undefined 
+               console.log("%c%s", "color:red","message: " + this.message)  
+        },
+        created: function () {
+               console.group('created 创建完毕状态===============》');
+               console.log("%c%s", "color:red","el     : " + this.$el); //undefined
+               console.log("%c%s", "color:red","data   : " + this.$data); //已被初始化 
+               console.log("%c%s", "color:red","message: " + this.message); //已被初始化
+        },
+        beforeMount: function () {
+		       console.group('beforeMount 挂载前状态===============》');
+		       console.log("%c%s", "color:red","el     : " + (this.$el)); //已被初始化
+		       console.log(this.$el);
+               console.log("%c%s", "color:red","data   : " + this.$data); //已被初始化  
+               console.log("%c%s", "color:red","message: " + this.message); //已被初始化  
+        },
+        mounted: function () {
+               console.group('mounted 挂载结束状态===============》');
+               console.log("%c%s", "color:red","el     : " + this.$el); //已被初始化
+               console.log(this.$el);    
+               console.log("%c%s", "color:red","data   : " + this.$data); //已被初始化
+               console.log("%c%s", "color:red","message: " + this.message); //已被初始化 
+        },
+
+        // 下面就能看到data里的值被修改后，将会触发update的操作。
+        
+        beforeUpdate: function () {
+               console.group('beforeUpdate 更新前状态===============》');
+               console.log("%c%s", "color:red","el     : " + this.$el);
+               console.log(this.$el);   
+               console.log("%c%s", "color:red","data   : " + this.$data); 
+               console.log("%c%s", "color:red","message: " + this.message); 
+        },
+        updated: function () {
+               console.group('updated 更新完成状态===============》');
+               console.log("%c%s", "color:red","el     : " + this.$el);
+               console.log(this.$el); 
+               console.log("%c%s", "color:red","data   : " + this.$data); 
+               console.log("%c%s", "color:red","message: " + this.message); 
+        },
+        
+        // 我们在console里执行下命令对 vue实例进行销毁。
+        // 执行命令：app.$destroy()
+        // 销毁完成后，我们再重新改变message的值，vue不再对此动作进行响应了。
+        // 但是原先生成的dom元素还存在，可以这么理解，执行了destroy操作，后续就不再受vue控制了。
+
+        beforeDestroy: function () {
+               console.group('beforeDestroy 销毁前状态===============》');
+               console.log("%c%s", "color:red","el     : " + this.$el);
+               console.log(this.$el);    
+               console.log("%c%s", "color:red","data   : " + this.$data); 
+               console.log("%c%s", "color:red","message: " + this.message); 
+        },
+        destroyed: function () {
+               console.group('destroyed 销毁完成状态===============》');
+               console.log("%c%s", "color:red","el     : " + this.$el);
+               console.log(this.$el);  
+               console.log("%c%s", "color:red","data   : " + this.$data); 
+               console.log("%c%s", "color:red","message: " + this.message)
+        }
+    })
+</script>
+</body>
+</html>

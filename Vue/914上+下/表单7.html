@@ -1,0 +1,32 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<!-- 起步 ：创建一个声明式渲染 -->
+<div id="app">
+   <select v-model="selected" multiple style="width: 150px">
+    <option disabled value="">请选择</option>
+    <option>A</option>
+    <option>B</option>
+    <option>C</option>
+   </select>
+  <span>Selected: {{ selected }}</span>
+</div>
+    </div>
+    <script>
+      var app=new Vue({
+      	el:'#app',//element元素
+      	data:{
+          selected: '我也不知道我会选什么'
+      	}
+      })
+    //看起来，这像是一个简单的字符串模板渲染
+    //但是，在vue背后，做了很多工作，背后的Dom与数据已经发生了绑定，所有的元素都已为响应式。
+
+    </script> 
+</body>
+</html>

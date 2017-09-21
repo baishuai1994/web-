@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<!-- 起步 ：创建一个声明式渲染 -->
+    <div id="app">
+    	<p>{{a}}</p>
+      <p>{{b}}</p>
+     <!--  <p>{{c}}</p> -->
+      <button v-on:click="getMessage">获取设置的信息</button>
+
+      <input type="text" v-model='a'>
+
+    </div>
+<!--     <div id="vm">{{b}}</div> -->
+    <script>
+    //除了data属性之外，vue实例还携带了一些常用的实例方法与属性，这些方法为了和其携带的data属性区分，都有前缀$.
+    var data ={a:1,b:2};
+
+      var app=new Vue({
+      	el:'#app',//element元素
+      	data:data,
+        methods:{
+          getMessage:function(){
+            alert(this.a)
+          }
+        }
+      })
+      // 知识点1.app.$data.c
+      // ①如果我们的c没有，它就报错 
+      // ②app.c是对data属性值设置的，不会报错，但是我们没有这个属性值的话，它依旧会报错（无法显示在html上）
+
+      app.c="我是通过$data设置的"
+      
+      //知识点2：你设置$el可以用来验证它不等于ById（），但是它并不能替代我们new Vue（{存在的el}），因为在vue底层已经把#app里的内容渲染过了，不会给你重头再来的机会。
+      // app.$el="#vm";
+      
+
+      console.log(app.$data===data);//true
+      console.log(app.$el===document.getElementById('app'));
+      
+
+      //$watch 作为事件监听而存在
+      //写法一：
+      // app.$watch('a',function(newval,oldval){
+      //    console.log(newval)
+      //    console.log(oldval)
+      // })
+      //写法二：
+      app.$watch(
+          function(){
+            return this.a
+          },
+          function(newval,oldval){
+            console.log(newval)
+            console.log(oldval)
+          } 
+      )
+    </script> 
+</body>
+</html>

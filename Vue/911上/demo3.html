@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue基础指令</title>
+	<!-- 1.引入vue.js -->
+	<script src="./vue.js"></script>
+</head>
+<body>
+	<!-- 2.创建Dom对象 -->
+	<div id="app">
+		<!-- 注意符号，注意格式，注意语法！！！ -->
+      <h2 :title="message2"> 鼠标悬停几秒后查看效果 </h2>		
+      <h2 :title="message1"> {{message2}} </h2>
+	</div>
+    
+	<script>
+       //1.v-bind
+       //2.v-on
+       //3.v-if (v-else,v-else if...)
+       //4.v-for
+       //5.v-model
+       //6.v-html
+    
+    //声明Vue对象
+     var app = new Vue({
+     	el:'#app',//Vue对象中，每一个属性以逗号相隔，Element
+     	data:{
+     		message1:'两个黄鹂鸣翠柳，一行白鹭上青天。',
+     		message2:'页面加载于'+new Date().toLocaleString()
+     	}
+     }) 
+
+	</script>
+</body>
+</html>

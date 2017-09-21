@@ -1,0 +1,30 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="./vue.js"></script>
+</head>
+<body>
+   <div id="app">
+		<table>
+		    <tr is='my-row'></tr>
+		</table>
+   </div>
+<script>
+// 重点强调：经过web612班进行全面而深刻的实验研究，其结果表明，我们的ol,ul是超脱这种世俗的束缚的。但是，我们的select，table难免落了俗。
+// table 出错的问题在，table管不了我们的component,其本身已经脱离了table，单独存在于#app里。
+// select 出错的问题在，我们的component发生了瞬间转移，消失在了云海里，但其内容依旧存在我们的记忆里。	
+   // 案例一，使用Render函数，模板解析将渲染出错
+    Vue.component('myRow', {
+        render: function(h) {
+            return h('tr', '行元素');
+        }
+    });
+    new Vue({
+        el: '#app'
+    });
+</script>
+    </script> 
+</body>
+</html>

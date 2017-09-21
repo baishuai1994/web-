@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue基础指令</title>
+    <style>
+      .jsx1{
+        background: skyblue;
+        color:white;
+      }
+    </style>
+	<!-- 1.引入vue.js -->
+	<script src="./vue.js"></script>
+</head>
+<body>
+    <!-- 效果，1.有个复选框，一个p标签 -->
+	<!-- 2.创建Dom对象 -->
+	<div id="app">
+		<!-- 注意符号，注意格式，注意语法！！！ --> 
+      <label for="jjj">颜色改变</label><input type="checkbox" v-model="jsx" id="jjj">
+      <br/>
+      <!-- jsx1代表键名，jsx代表键值 -->
+      <div :class="{'jsx1':jsx}">
+          看好我哟，我会变色的
+      </div>
+	</div>
+	<script>
+
+    
+    //3.声明Vue对象
+     var app = new Vue({
+     	el:'#app',//Vue对象中，每一个属性以逗号相隔，Element
+     	data:{
+          jsx:true 
+     	}
+        //第一步：v-model是用来绑定jsx这个属性，来实现属性值的改变
+        //第二步：通过改变jsx属性，来实现class的增删改。
+        //第三步：改变class名的布尔值，来控制style样式的显示隐藏
+        // 两次联动，必须保持名称一致的位置
+        // 第一次联动：data中的jsx数据与v-model与class键值对中的键值
+        // 第二次联动：class键值对中的键名与style样式中的class名
+     }) 
+
+	</script>
+</body>
+</html>

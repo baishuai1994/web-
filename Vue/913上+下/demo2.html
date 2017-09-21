@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<!-- <!-- 官方实例 -->
+	<!-- #修饰符 -->
+
+<!-- 修饰符 (Modifiers) 是以半角句号 . 指明的特殊后缀，用于指出一个指令应该以特殊方式绑定。例如，.prevent 修饰符告诉 v-on 指令对于触发的事件调用 event.preventDefault()： -->
+      
+      <form v-on:submit.prevent="onSubmit"></form>
+
+<!-- 之后当我们更深入地了解 v-on 与 v-model时，会看到更多修饰符的使用。 -->
+<!-- 
+    vue.js为v-on提供了很多的事件修饰符
+    .stop()阻止冒泡
+    .prevent()不再重载页面
+    .capture()添加时间侦听器时的事件捕获模式
+    .self()只当事件在该元素本身（非子元素）触发时触发回调
+    v-once（v-on.once）只触发一次
+ 
+    按键修饰符
+    .enter()
+    .tab()
+    .delete()==>可以捕获到“删除”和“退格”的
+    .esc()
+    .space()
+    up,left,right,down...()
+    可通过vue.config.keyCodes.enter=enter1 自定义按键修饰符别名 -->
+     
+    <div id="app">
+    	我是在span标签上面的，点我试试看
+    	<span v-on:click.stop.once="spanMethod">我是span标签</span><br/>
+        <input type="text" v-on:keyup.37="say('left键')"><br/>
+        <input type="text" v-on:keyup.38="say('up键')"><br/>
+        <input type="text" v-on:keyup.39="say('right键')"><br/>
+        <input type="text" v-on:keyup.40="say('down键')">
+    </div>
+    <script src="./vue.js"></script>
+    <script>
+      var app= new Vue({
+      	el:'#app',
+      	data:{},
+      	methods:{
+      		spanMethod:function(){
+      			alert('我是span的方法')
+      		},
+      		say:function(str){
+                alert(str)
+      		}
+      	}
+      }) 
+    </script>     
+</body>
+</html>

@@ -1,0 +1,44 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<!-- 起步 ：创建一个声明式渲染 -->
+    <div id="app">
+    	<my-component></my-component>
+    	<my-component></my-component>
+    </div>
+
+    <script>
+    //对于自定义标签名，Vue.js 不强制要求遵循 W3C 规则 (小写，并且包含一个短杠)，尽管遵循这个规则比较好。
+    
+    // HTML 特性是不区分大小写的。所以，当使用的不是字符串模板，
+    // camelCased (驼峰式) 命名的,需要转换为相对应的 kebab-case (短横线隔开式) 命名： 
+
+
+    // 确保在初始化根实例###之前###注册了组件： 
+    
+      var Child = {
+        template: '<div>A custom component!</div>'
+      }
+
+      // 全局注册
+      // Vue.component('myComponent', {
+      //   template:'<p>Teacher Ji</p>'
+      // })
+      var app=new Vue({
+      	el:'#app',//element元素
+      	//局部注册 
+      	components: {
+         // <my-component> 将只在父模板可用
+          'my-component': Child
+        }
+      })
+
+
+    </script> 
+</body>
+</html>

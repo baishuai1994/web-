@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script type="text/javascript" src="vue.js"></script>
+	</head>
+	<body>
+		<div id="box">
+		<input type="button" value="按钮" v-on:click="a=false">
+		<div style="width: 200px; height: 200px; background: #FF0000;" v-show="a"></div>
+		</div>
+	</body>
+</html>
+<script type="text/javascript">
+	window.onload = function()
+	{
+		var app = new Vue({
+			el:'#box',
+			data:{
+				a:true
+			}			
+		})
+	}
+</script>

@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue基础指令</title>
+	<!-- 1.引入vue.js -->
+	<script src="./vue.js"></script>
+</head>
+<body>
+	<!-- 2.创建Dom对象 -->
+	<div id="app">
+		<!-- 注意符号，注意格式，注意语法！！！ --> 
+    <p> {{ message }} </p>
+    <!--     v-bind:==> :   v-on:click==>@click 这个v-on最好不要简写，因为在asp，.net,mvc某些页面中兼容识别不太好   -->
+    <button v-on:click="reverseMessage">逆转信息</button> 
+	</div>
+	<script>
+       //1.v-bind
+       //2.v-on
+       //3.v-if (v-else,v-else if...)
+       //4.v-for
+       //5.v-model
+       //6.v-html
+    
+    //3.声明Vue对象
+     var app = new Vue({
+     	el:'#app',//Vue对象中，每一个属性以逗号相隔，Element
+     	data:{
+        message:'Hello Teacher Ji' 
+     	},
+      methods: {
+        reverseMessage: function(){
+          this.message=this.message.split('').reverse().join('')
+        }
+      }
+     }) 
+
+	</script>
+</body>
+</html>

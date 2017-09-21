@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<!-- 起步 ：创建一个声明式渲染 -->
+    <div id="app">
+    	<p v-once>{{message}}</p>
+    </div>
+    <script>
+      var app=new Vue({
+      	el:'#app',//element元素
+      	data:{
+      		message:'Hello,Vue.js'
+      	}
+      })
+
+// 使用 JavaScript 表达式
+
+// 迄今为止，在我们的模板中，我们一直都只绑定简单的属性键值。但实际上，对于所有的数据绑定，Vue.js 都提供了完全的 JavaScript 表达式支持。
+
+// {{ number + 1 }}//加减乘除运算
+
+// {{ ok ? 'YES' : 'NO' }}//三目运算符操作
+
+// {{ message.split('').reverse().join('') }}字符串数组操作方法
+ 
+// <div v-bind:id="'list-' + id"></div>//属性id,class进行操作
+
+// 这些表达式会在所属 Vue 实例的数据作用域下作为 JavaScript 被解析。有个限制就是，每个绑定都只能包含单个表达式，所以下面的例子都不会生效。
+// <!-- 这是语句，不是表达式 -->
+// {{ var a = 1 }}
+// <!-- 流控制也不会生效，请使用三元表达式 -->
+// {{ if (ok) { return message } }}
+// 模板表达式都被放在沙盒中，只能访问全局变量的一个白名单，如 Math 和 Date 。
+//      ***你不应该在模板表达式中试图访问用户定义的全局变量。***
+
+    </script> 
+</body>
+</html>

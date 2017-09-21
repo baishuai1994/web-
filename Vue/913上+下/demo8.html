@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script src="https://unpkg.com/vue/dist/vue.js"></script>
+</head>
+<body>
+    <div id="myapp">
+
+        <p> {{message}}</p>
+        <button v-on:click="changeMessage">click me</button>
+    </div>
+<script>
+ /**
+  *   实例被创建之前要经过初始化过程，配置数据、编译模板、挂在实例到DOM，在数据变化时更新DOM，
+  *   这个过程中，我们就可以调用一些生命周期钩子（函数），
+  *   我们可以在钩子当中搞点儿事情。
+ */
+
+/**
+ * 在实例的不同生命周期，有不同的被调用的钩子，如下：
+ */
+
+
+var app = new Vue({
+    el:'#myapp',
+    data:{
+        message : "介绍生命周期钩子"
+    },
+    beforeCreate : function(){
+        console.group('beforeCreate  实例创建前的状态===========================')
+        
+    },
+    created : function(){
+        console.group('created   实例创建完成状态 ====================')
+    },
+    beforeMount : function(){
+        console.group('beforeMount 模板编译/挂载之前 ===================')
+    },
+    mounted : function(){
+        console.group('mounted 模板编译/挂载之后===================')
+    },
+    beforeUpdate : function(){
+        console.group('beforeUpdate 组件更新之前==================')
+    },
+    updated : function(){
+        console.group('update 组件更新之后 =======================')
+    },
+    beforeDestroy : function(){
+        console.group('beforeDestroy 组件销毁之前============')
+    },
+    destroyed : function(){
+        console.group('destroy 组件销毁之后 ==================')
+    },
+    methods : {
+        changeMessage : function(){
+            this.message = '张三';
+        }
+    }
+})
+// app.$destroy()
+
+</script>
+</body>
+</html>

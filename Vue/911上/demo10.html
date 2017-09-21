@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="https://unpkg.com/vue"></script>
+</head>
+<body>
+	<!-- 起步 ：创建一个声明式渲染 -->
+    <div id="app">
+      <input type="text" v-model="message">
+      <p>{{message}}</p>
+    </div>
+    <script>
+      var app=new Vue({
+      	el:'#app',//element元素
+      	data:{
+      		message:'Hello Teacher Ji'
+        	}
+      })
+      // v-for 内容是 “"自定义的一个对象名"+"in"+"data属性值"”
+      // 花括号内容是 “"自定义的一个对象名"+"."+"对象中的键名"”
+    </script> 
+</body>
+</html>

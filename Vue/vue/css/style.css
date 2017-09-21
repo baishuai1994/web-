@@ -1,0 +1,61 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, dl, dt, dd, ul, ol, li, pre, form, fieldset, legend, button,
+input, textarea, th, td { margin:0; padding:0; }
+body, button, input, select, textarea { font:12px/1.5tahoma, arial, \5b8b\4f53; }
+h1, h2, h3, h4, h5, h6{ font-size:100%; }
+address, cite, dfn, em, var { font-style:normal; }
+code, kbd, pre, samp { font-family:couriernew, courier, monospace; }
+small{ font-size:12px; }
+ul, ol { list-style:none; }
+a { text-decoration:none; }
+a:hover { text-decoration:underline; }
+sup { vertical-align:text-top; }
+sub{ vertical-align:text-bottom; }
+legend { color:#000; }
+fieldset, img { border:0; }
+button, input, select, textarea { font-size:100%; }
+table { border-collapse:collapse; border-spacing:0; }
+
+.view{
+    width: 800px;
+    height: 300px;
+    margin:100px 400px;
+}
+.shadow{
+    width:100%;
+    height:200px;
+    background: rgba(0,0,0,0.4);
+    color:#FFF;
+   text-align:center;
+   padding-top:60px;
+   line-height:30px;
+   font-family:"微软雅黑";
+   font-size:26px;
+
+
+}
+.view .bg_park,.bg_loves,.bg_disgner,.bg_youth,.bg_feature,.bg_island,.bg_overseas{
+    width:14%;
+    height: 260px;
+    float: left;
+}
+.view .bg_park{
+    background:url(../images/1.jpg);
+}
+.view .bg_loves{
+    background:url(../images/2.jpg);
+}
+.view .bg_disgner{
+    background:url(../images/3.jpg);
+}
+.view .bg_youth{
+    background:url(../images/4.jpg);
+}
+.view .bg_feature{
+    background:url(../images/5.jpg);
+}
+.view .bg_island{
+    background:url(../images/6.jpg);
+}
+.view .bg_overseas{
+    background:url(../images/7.jpg);
+}

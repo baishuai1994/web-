@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="vue.js"></script>
+		<script type="text/javascript">
+			window.onload = function()
+			{
+				var app = new Vue({
+					el:"#app",
+					data:{
+						msg:'welcome Vue',
+						msg2:12,
+						msg3:true,
+						arr:['apple','banana','orange','pear'],
+						json:{a:'apple',b:'banana',c:'orange',d:'pear'}
+					}
+				})
+			}
+		</script>
+	</head>
+	<body>
+		<div id="app">
+			
+			<input type="text" v-model="msg" />
+			<input type="text" v-model="msg" />
+			<br />
+			{{msg}}
+			<br/>
+			{{msg2}}
+			<br />
+			{{msg3}}
+			<br />
+			{{arr}}
+			<br />
+			{{json}}
+		</div>
+	</body>
+</html>

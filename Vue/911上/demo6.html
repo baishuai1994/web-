@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>vue基础指令</title>
+	<!-- 1.引入vue.js -->
+	<script src="./vue.js"></script>
+</head>
+<body>
+	<!-- 2.创建Dom对象 -->
+	<div id="app">
+		<!-- 注意符号，注意格式，注意语法！！！ --> 
+    <p v-html="message">12111</p>
+    <!-- 能拿到数据，傻瓜式一键翻转 -->
+    <p>{{message.split('').reverse().join('')}}</p>
+    <button v-on:click="reverseMessage">逆转信息</button> 
+	</div>
+	<script>
+       //1.v-bind
+       //2.v-on
+       //3.v-if (v-else,v-else if...)
+       //4.v-for
+       //5.v-model
+       //6.v-html //我的双花括号是用来插入文本的,v-html是用来插入html标签的，会覆盖父盒子里的内容。强调：我们不建议初学者直接对页面任意插入这个v-html,因为它容易受到xss攻击，
+       //老师建议你，在对可信任的内容上尝试用v-html,对隐私数据，或者用户的数据，不采用v-html插入
+       //7.v-once //代表了你如果只想渲染一次，不让跟着数据发生改变，可以采用v-once
+
+    //3.声明Vue对象或者创建一个vue实例
+     var app = new Vue({
+     	el:'#app',//Vue对象中，每一个属性以逗号相隔，Element
+     	data:{
+        message:'<h2>Hello Teacher Ji</h2>' 
+     	},
+      methods: {
+        reverseMessage: function(){//此时，我们是拿不到html里的信息的
+          this.message=this.message.split('').reverse().join('')
+        }
+      }
+     }) 
+
+	</script>
+</body>
+</html>
