@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<script src="../build/react.js" type="text/javascript"></script>
+		<script src="../build/react-dom.js" type="text/javascript"></script>
+		<script src="../build/browser.min.js"></script>
+	</head>
+	<body>
+		<div id="example"></div>
+		
+		<script type="text/babel">
+			var names = ['aaa','bbb','ccc'];
+			
+			ReactDOM.render(
+			<div>
+			{
+				names.map(function(name,index){
+					return <div key={index}>你好,{name}!</div>
+				})
+			}
+			</div>,
+			document.getElementById("example")
+			);
+		</script>
+	</body>
+	
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    <script type="text/babel">
+      // html标签元素渲染
+      
+      // var jsx = <div>hello jsx!</div>; 
+        
+      // ReactDOM.render(
+      //   jsx,
+      //   document.getElementById('example')
+      // );
+
+//组件的渲染（必要元素）
+// 1.React.createClass（{}）
+// 2.render: 
+//3.function(){}不是必须的，但是我们更习惯采用这种写法
+//4.return 
+      var HelloMessage = React.createClass({
+        render: function() {
+          return <h1>Hello {this.props.name} {this.props.data}</h1>;
+        }
+      });
+      ReactDOM.render(
+        <HelloMessage name="jsx is cool" data="my msg"/>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>

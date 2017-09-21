@@ -6,3 +6,10 @@ http://www.jianshu.com/p/a9b5e3e84222
 
 React入门指南 --图灵社区
 http://www.ituring.com.cn/article/274917
+
+
+$ git add "文件名"
+
+$ git commit -m "first commit"
+
+$ git push origin master

@@ -1,0 +1,45 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="react.js"></script>
+	<script src="react-dom.js"></script>
+	<script src="browser.min.js"></script>
+</head>
+<body>
+	<div id="myapp"></div>
+	<script type="text/babel">
+  
+      ReactDOM.render(	//ReactDOM.render把react实例创建成功,注意：大小写
+         <p>Hello World！</p>,//把h1标签写入我们的操作元素里
+        
+         //获取我们的操作element。
+       	)
+  //上述代码有两个地方需要注意：
+    // 1.我们的最后一个script标签属性为：text/babel,这是因为react独有的jsx语法，跟Javascript不兼容，所以，但凡我们使用jsx语法的地方，我们都需要加type="text/babel"。
+       // 2.其次，我们上面出现了三个库，分别是react.js，react-dom.js，browser.min.js，它们必须首先加载。
+       // 其中，第一个库-react.js，是react的核心库
+       //       第二个库-react-dom.js，实现与dom操作相关的功能(react操作Dom用的)。
+       //       第三个库-browser.min.js,是用来实现将jsx语法转为javascript语法的。
+       //       第三步是很消耗时间的，所以我们在上线的时候，一般把这部分放在了服务器上。
+      
+
+    // jsx语法是把html元素写在了javascript标签，而且不需要加引号。
+    // 我们的react(这里主要指browser)把html代码转换成了React.createElement('<p>Hello World！</p>')
+    // 这就是我们的jsx语法的基本原理。
+    // 他会自动识别我们的html代码，并且全部转译为React.createElement(),然后编译出来，成为原生的js代码(实为虚拟dom)。
+     
+    // jsx内 js vs html  区别联系：
+    // 补充：'<'识别为html的内容，'{'识别为js的内容
+
+    // 1.前括号之内并且首字母小写的就是html代码；
+    // 2.如果首字母大写，这就是react组件，后面会讲到react组件。 
+    
+
+    // ReactDOM.render
+    
+
+	</script>
+</body>
+</html>

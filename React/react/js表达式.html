@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="react.js"></script>
+    <script src="react-dom.js"></script>
+    <script src="browser.min.js"></script>
+  </head>
+  <body>
+    <div id="example"></div>
+    
+    <script type="text/babel">
+      
+// {if(i=2){return true}else{return false}} 不可取
+// 可支持四则混合运算+三目运算符，这些都是没有问题的！
+      const i = 2;  
+      ReactDOM.render(
+        <div>
+          <h1></h1>
+          <p>{5-1}</p>
+          <h3>{i == 1 ? 'True!' : 'False'}</h3>
+        </div>,
+        document.getElementById('example')
+      );
+    </script>
+  </body>
+</html>
+
